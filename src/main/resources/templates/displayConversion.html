@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Exchange</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div id="parent">
+        <h2>Currency Exchange</h2>
+        <div class="child">
+            <span data-th-text="${currNameFrom+':'}"></span>
+            <span data-th-text="${currSymbolFrom}+${currFromAmt}"></span>
+        </div>
+        <br>
+        <div class="child">
+            <span data-th-text="${currNameTo+':'}"></span>
+            <span data-th-text="${currSymbolTo}+${currToAmt}"></span>
+        </div>
+    </div>
+</body>
+</html>

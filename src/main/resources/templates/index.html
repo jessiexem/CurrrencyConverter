@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="form">
+        <h2>Currency Exchange</h2>
+        <form action="/convert" method="post">
+            <label for="currencyFrom">From: </label>
+            <select name="currencyFrom" id="currencyFrom">
+                <option data-th-each="c:${currList}" data-th-value="${c.currencyId}+','+${c.currencyName}+','+${c.currencySymbol}"
+                        data-th-text="${c.currencyName}+' '+${c.currencySymbol}"></option>
+            </select>
+            <br>
+            <br>
+            <label for="currencyTo">To: </label>
+            <select name="currencyTo" id="currencyTo">
+                <option data-th-each="c:${currList}" data-th-value="${c.currencyId}+','+${c.currencyName}+','+${c.currencySymbol}"
+                        data-th-text="${c.currencyName}+' '+${c.currencySymbol}"></option>
+            </select>
+            <br>
+            <br>
+            <label for="amount">Amount: </label>
+            <input type="number" id="amount" name="amount" min="0" step="50">
+            <br>
+            <br>
+            <div style="display:flex; justify-content:flex-end; width:100%; padding:0;">
+                <button type="submit">Convert</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
